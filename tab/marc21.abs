@@ -58,8 +58,8 @@ melm 411		Author:w
 melm 411$t		Title:w,Author:w
 melm 440		Title:w
 melm 440$a		Title:w,Title:p
-melm 490$a		Title:w,Title:p
-melm 490		Title:w
+melm 490$a		Title:w,Title:p,Title-series:w,Title-series:p
+melm 490		Title:w,Title-series:w
 melm 500                any:w,any:p
 melm 530                any:w,any:p
 melm 590                any:w,any:p
