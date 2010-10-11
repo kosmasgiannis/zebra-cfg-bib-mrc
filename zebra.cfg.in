@@ -17,7 +17,7 @@ modulePath: /usr/lib/idzebra-2.0/modules
 attset: bib1.att
 attset: explain.att
 
-database: pleiades
+database: db
 
 # Specify record type
 recordType: grs.marcxml.marc21
