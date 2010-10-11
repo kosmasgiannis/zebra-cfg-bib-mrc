@@ -1,0 +1,110 @@
+# $Id: marc21.abs,v 1.2 2005/01/04 16:48:03 quinn Exp $
+
+# This is a fairly simple example of a set of MARC21 indexing rules. It
+# results in a server which provides a passable Bath level 0 and 1 service
+# (author, title, subject, keyword and exact services). Feel free to
+# elaborate on it, and if you do, please consider sharing your additions.
+# NOTE: This is designed to be used with the grs.marcxml input filter
+# for ISO2709 (ANSI Z39.2) or grs.xml for MARCXML-formatted records. It
+# won't work for the old grs.marc input filter, which yields a different
+# internal structure.
+
+name marc21
+attset bib1.att
+
+esetname F @
+esetname B @
+esetname 1 usmarc-1.est
+
+marc usmarc.mar
+
+xpath disable
+encoding UTF-8
+
+all any
+
+melm 001 Local-number:w,Local-number:n,Local-number:s
+melm 005 Date/time-last-modified:w:range(data,0,8),Date/time-last-modified:p:range(data,0,8)
+melm 008 Date/time-added-to-db:w:range(data,0,6),Date/time-added-to-db:p:range(data,0,6),Code-language:w:range(data,35,3),Code-language:p:range(data,35,3)
+melm 010 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 015 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 016 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 020 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n,ISBN:w,ISBN:p
+melm 022 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n,ISSN:w,ISSN:p,ISSN:n
+melm 024 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 027 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 028 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 030 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 086 Identifier-standard:w,Identifier-standard:p,Identifier-standard:n
+melm 260$a     Place-publication:w
+melm 260$b     Publisher:w,Publisher:p,Publisher:s
+melm 260$c     Date-of-publication:w,Date-of-publication:s
+melm 100		Author:w,Author:p,Author-name-personal:w,Author-name-personal:p,Author:s
+melm 110		Author:w,Author:p,Author-name-corporate:w,Author-name-corporate:p,Author:s
+melm 111		Author:w,Author:p,Author-name-conference:w,Author-name-conference:p,Author:s
+melm 130		Title:w,Title:p
+melm 240		Title:w,title:p
+melm 242		Title:w,title:p
+melm 243		Title:w,title:p
+melm 245		Title:w,title:p,title:s
+melm 245$c		Author:w
+melm 246		Title:w,title:p
+melm 247		Title:w,title:p
+melm 400		Author:w,Author:p
+melm 400$t		Title:w
+melm 410		Author:w
+melm 410$t		Title:w
+melm 411		Author:w
+melm 411$t		Title:w,Author:w
+melm 440		Title:w
+melm 440$a		Title:w,Title:p
+melm 490$a		Title:w,Title:p
+melm 490		Title:w
+melm 500                any:w,any:p
+melm 530                any:w,any:p
+melm 590                any:w,any:p
+melm 504                any:w,any:p
+melm 505                any:w,any:p
+melm 510                any:w,any:p
+melm 520                any:w,any:p
+melm 600		Subject-heading:w,Subject-heading:p
+melm 600$t		Title:w
+melm 610		Subject-heading:w
+melm 610$t		Title:w
+melm 611		Subject-heading:w
+melm 611$t		Title:w
+melm 630		Subject-heading:w
+melm 650		Subject-heading:w,Subject-heading:p
+melm 651		Subject-heading:w,Subject-heading:p
+melm 653		Subject-heading:w,Subject-heading:p,I653:w,I653:p,I653:s
+melm 654		Subject-heading:w.Subject-heading:p
+melm 655		Subject-heading:w
+melm 656		Subject-heading:w
+melm 657		Subject-heading:w
+melm 657		Subject-heading:w
+melm 690		Subject-heading:w
+melm 691		Subject-heading:w
+melm 700		Author:w
+melm 700$t		Title:w
+melm 700$a		Author:w,Author:p,Author-name-personal:w,Author-name-personal:p
+melm 710		Author:w
+melm 710$t		Title:w
+melm 710$a		Author:w,Author:p,Author-name-corporate:w,Author-name-corporate:p
+melm 711		Author:w
+melm 711$t		Title:w
+melm 711$a              Author:w,Author:p,Author-name-conference:w,Author-name-conference:p
+melm 730		Title:w
+melm 740		Title:w
+melm 800		Author:w,Author:p,Author-name-personal:w,Author-name-personal:p
+melm 800$t		Title:w
+melm 810		Author:w
+melm 810$t		Title:w
+melm 810$a		Author:w,Author:p,Author-name-corporate:w,Author-name-corporate:p
+melm 811		Author:w
+melm 811$t		Title:w
+melm 811$a              Author:w,Author:p,Author-name-conference:w,Author-name-conference:p
+melm 830		Title:w
+melm 852$a		Branch:w,Branch:p,Branch:s
+melm 852$b		Collection:w,Collection:p,Collection:s
+melm 852$j		Local-classification:w,Local-classification:p
+melm 876$p		Barcode:w,Barcode:p

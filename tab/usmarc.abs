@@ -1,0 +1,158 @@
+# $Id: usmarc.abs,v 1.1 2002/10/22 12:51:09 adam Exp $
+name usmarc
+reference USmarc
+attset bib1.att
+tagset usmarc.tag
+
+marc usmarc.mar
+
+esetname B usmarc-b.est
+esetname F @
+
+encoding UTF-8
+
+elm 001		Local-number		!
+elm 008/[35-37]	Code-language		Code-language:w,Code-language:p
+
+# All 245 subfields mapped to title (word) and 
+# 245 subfield a mapped to tile (phrase).
+elm 245			title		-
+elm 245/?		title		!:w
+elm 245/?/a		title		!:w,!:p
+
+# 100 mapped to Author-name-personal and Author.
+#elm 100			Author-name-personal	-
+#elm 100/?		Author-name-personal	!:w,!:p,Author:w,Author:p
+
+# 110 mapped to Author-name-corporate and Author
+#elm 110			Author-name-corporate	-
+#elm 110/?		Author-name-corporate	!:w,!:p,Author:w,Author:p
+
+# 111 mapped to Author-name-conference and Author
+#elm 111			Author-name-conference	-
+#elm 111/?		Author-name-conference	!:w,!:p,Author:w,Author:p
+
+# Tag 6XX mapped to Subject heading
+#elm 650			Subject-heading	-
+#elm 650/?		Subject-heading	!:w,!:p
+
+
+
+elm 010		Identifier-standard	- 
+elm 010/?	Identifier-standard !:w,!:p,!:n	
+elm 015		Identifier-standard	- 
+elm 015/?	Identifier-standard !:w,!:p,!:n	
+elm 016		Identifier-standard	- 
+elm 016/?	Identifier-standard !:w,!:p,!:n	
+elm 020		Identifier-standard	- 
+elm 020/?	Identifier-standard !:w,!:p,!:n,ISBN:w,ISBN:p
+elm 022		Identifier-standard	- 
+elm 022/?	Identifier-standard !:w,!:p,!:n,ISSN:w,ISSN:p,ISSN:n	
+elm 024		Identifier-standard	- 
+elm 024/?	Identifier-standard !:w,!:p,!:n	
+elm 027		Identifier-standard	- 
+elm 027/?	Identifier-standard !:w,!:p,!:n	
+elm 028		Identifier-standard	- 
+elm 028/?	Identifier-standard !:w,!:p,!:n	
+elm 030		Identifier-standard	- 
+elm 030/?	Identifier-standard !:w,!:p,!:n	
+elm 086		Identifier-standard	- 
+elm 086/?	Identifier-standard !:w,!:p,!:n	
+
+elm 100		author	- 
+elm 100/?	author !:w,!:p	
+elm 110		author	- 
+elm 110/?	author !:w,!:p	
+elm 111		author	- 
+elm 111/?	author !:w,!:p	
+elm 130		title	- 
+elm 130/?	title !:w,!:p	
+elm 1??		any	!:w,!:p	
+elm 240		title	- 
+elm 240/?	title !:w,!:p	
+elm 245/?	title - 
+elm 245/?/a	title !:w,!:p 
+elm 245/?/b	title !:w,!:p 
+elm 245/?/c	title -	
+elm 246		title -
+elm 246/?	title !:w,!:p	
+elm 260		Date-of-publication - 
+elm 260/?	Date-of-publication - 
+elm 260/?/a	Place-publication	!:w
+elm 260/?/b	Publisher		!:w
+elm 260/?/c	Date-of-publication !:w,!:p,!:n	
+
+elm 2??		any	!:w,!:p	
+elm 3??		any	!:w,!:p	
+elm 400		author -
+elm 400/?	author !:w,!:p	
+elm 400/?/a	author !:w,!:p	
+elm 400/?/t	title	- 
+elm 410		author -
+elm 410/?	author !:w,!:p	
+elm 410/?/a	author !:w,!:p	
+elm 410/?/t	title	- 
+elm 411		author -
+elm 411/?	author !:w,!:p	
+elm 411/?/a	author !:w,!:p	
+elm 411/?/t	title	- 
+elm 440		title	- 
+elm 440/?	title !:w,!:p	
+elm 4??		any	!:w,!:p	
+elm 5??		any	!:w,!:p	
+elm 600		subject-heading	- 
+elm 600/?	subject-heading !:w,!:p	
+elm 610		subject-heading	- 
+elm 610/?	subject-heading !:w,!:p	
+elm 611		subject-heading	- 
+elm 611/?	subject-heading !:w,!:p	
+elm 630		subject-heading	- 
+elm 630/?	subject-heading !:w,!:p	
+elm 650		subject-heading	- 
+elm 650/?	subject-heading -
+elm 650/?/?	subject-heading !:w,!:p	
+elm 651		subject-heading	- 
+elm 651/?	subject-heading !:w,!:p	
+elm 653			Subject-heading	-
+elm 653/?		Subject-heading	!:w,!:p
+elm 654			Subject-heading	-
+elm 654/?		Subject-heading	!:w,!:p
+elm 690		subject-heading	- 
+elm 690/?	subject-heading !:w,!:p	
+elm 691		subject-heading	- 
+elm 691/?	subject-heading !:w,!:p	
+elm 6??		any	!:w,!:p	
+elm 700		author - 
+elm 700/?	author !:w,!:p 
+elm 700/?/a	author !:w,!:p 
+elm 700/?/t	title	- 
+elm 710		author - 
+elm 710/? 	author !:w,!:p 
+elm 710/?/a	author !:w,!:p 
+elm 710/?/t	title	- 
+elm 711		author - 
+elm 711/? 	author !:w,!:p 
+elm 711/?/a	author !:w,!:p 
+elm 711/?/t	title	- 
+elm 730		title	- 
+elm 730/?	title !:w,!:p	
+elm 740		title	- 
+elm 740/?	title !:w,!:p	
+elm 7??		any	!:w,!:p	
+elm 800		author - 
+elm 800/? 	author !:w,!:p	
+elm 800/?/a	author !:w,!:p	
+elm 800/?/t	title	- 
+elm 810		author - 
+elm 810/? 	author !:w,!:p	
+elm 810/?/a	author !:w,!:p	
+elm 810/?/t	title	- 
+elm 811		author - 
+elm 811/? 	author !:w,!:p	
+elm 811/?/a	author !:w,!:p	
+elm 811/?/t	title	- 
+elm 830		title	- 
+elm 830/?	title !:w,!:p	
+elm 840		title	- 
+elm 840/?	title !:w,!:p	
+elm 8??		any	!:w,!:p

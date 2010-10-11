@@ -1,0 +1,49 @@
+# Simple Zebra configuration file that defines
+# a database with USMARC records.
+# $Id: zebra.cfg,v 1.4 1999/12/08 22:11:56 adam Exp $
+#
+
+perm.anonymous:w
+
+# Where are the config files located?
+profilePath: .:./tab:/usr/share/idzebra-2.0/tab
+modulePath: /usr/lib/idzebra-2.0/modules
+
+#Windows setting:
+#profilePath: .:.\tab:\Program Files\Zebra\tab
+#profilePath: .:.\tab:${srcdir:-.}\tab
+
+# Files that describe the attribute sets supported.
+attset: bib1.att
+attset: explain.att
+
+database: pleiades
+
+# Specify record type
+recordType: grs.marcxml.marc21
+recordId: (bib1,Local-number)
+
+storeKeys: 1
+storeData: 1
+isam:b
+
+# Shadow File Area
+shadow: shadow:8G
+
+# Register File Area
+register: register:8G
+
+# Lock File Area
+lockDir: lock
+
+# Temp File area for result sets
+setTmpDir: tmp
+
+# Temp File area for index program
+keyTmpDir: tmp
+
+# Approx. Memory usage during indexing
+memMax: 80
+
+# Default encoding
+encoding: UTF-8
