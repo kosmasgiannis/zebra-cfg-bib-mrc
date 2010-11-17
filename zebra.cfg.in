@@ -2,8 +2,6 @@
 # a database with USMARC records.
 #
 
-perm.anonymous:w
-
 # Where are the config files located?
 profilePath: .:./tab:/usr/share/idzebra-2.0/tab
 modulePath: /usr/lib/idzebra-2.0/modules
@@ -16,7 +14,11 @@ modulePath: /usr/lib/idzebra-2.0/modules
 attset: bib1.att
 attset: explain.att
 
-database: db
+database: __DB__
+
+perm.anonymous:rw
+#perm.__USER__:rw
+#perm.anonymous:ar
 
 # Specify record type
 recordType: grs.marcxml.marc21
