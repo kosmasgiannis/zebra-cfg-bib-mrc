@@ -16,7 +16,7 @@ esetname 1 usmarc-1.est
 
 marc usmarc.mar
 
-xpath disable
+xpath enable
 encoding UTF-8
 
 all any
@@ -101,7 +101,8 @@ melm 810$a		Author:w,Author:p,Author-name-corporate:w,Author-name-corporate:p
 melm 811		Author:w
 melm 811$t		Title:w
 melm 811$a              Author:w,Author:p,Author-name-conference:w,Author-name-conference:p
-melm 830		Title:w
+melm 830$a		Title:w,Title:p,Title-series:w,Title-series:p
+melm 830$t		Title:w,Title-series:w
 melm 852$a		Branch:w,Branch:p,Branch:s
 melm 852$b		Collection:w,Collection:p,Collection:s
 melm 852$j		Local-classification:w,Local-classification:p
