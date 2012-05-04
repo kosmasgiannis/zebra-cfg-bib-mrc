@@ -32,9 +32,11 @@ isam:b
 recordcompression: none
 
 # Shadow File Area
+# Use negative value to avoid filesystem space checking
 shadow: shadow:8G
 
-# Register File Area
+# Register File Area 
+# Use negative value to avoid filesystem space checking
 register: register:8G
 
 # Lock File Area
